@@ -1,6 +1,6 @@
-package com.example.demo.controller;
+package com.jumbo.controller;
 
-import static com.example.demo.mapper.StoreMapper.mapToLocationDO;
+import static com.jumbo.mapper.StoreMapper.mapToLocationDO;
 import static java.util.stream.Collectors.toList;
 
 import javax.validation.Valid;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.datatransferobject.StoresDTO;
-import com.example.demo.service.StoreService;
+import com.jumbo.datatransferobject.StoresDTO;
+import com.jumbo.service.StoreService;
 
 /**
  * All operations for stores will be routed through this controller.

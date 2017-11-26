@@ -1,11 +1,11 @@
-package com.example.demo.util;
+package com.jumbo.util;
 
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 import static java.lang.Math.toRadians;
 
-import com.example.demo.domainobject.LocationDO;
 import com.google.maps.model.Geometry;
+import com.jumbo.domainobject.LocationDO;
 
 public class CalculateDistance {
 	

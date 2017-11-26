@@ -1,4 +1,4 @@
-package com.example.demo.util;
+package com.jumbo.util;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

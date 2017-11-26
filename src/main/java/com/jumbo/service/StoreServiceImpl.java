@@ -1,8 +1,8 @@
-package com.example.demo.service;
+package com.jumbo.service;
 
-import static com.example.demo.mapper.StoreMapper.mapToLocationDTO;
-import static com.example.demo.util.CalculateDistance.distanceTo;
-import static com.example.demo.util.LocationTool.getGeometry;
+import static com.jumbo.mapper.StoreMapper.mapToLocationDTO;
+import static com.jumbo.util.CalculateDistance.distanceTo;
+import static com.jumbo.util.LocationTool.getGeometry;
 import static java.util.Collections.emptyList;
 import static java.util.Comparator.comparing;
 import static java.util.Comparator.reverseOrder;
@@ -17,10 +17,10 @@ import java.util.TreeMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.datatransferobject.StoresDTO;
-import com.example.demo.domainobject.LocationDO;
-import com.example.demo.repository.LocationRepository;
 import com.google.maps.model.Geometry;
+import com.jumbo.datatransferobject.StoresDTO;
+import com.jumbo.domainobject.LocationDO;
+import com.jumbo.repository.LocationRepository;
 
 @Service
 public class StoreServiceImpl implements StoreService {

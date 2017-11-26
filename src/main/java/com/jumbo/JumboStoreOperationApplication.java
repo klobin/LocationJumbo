@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.jumbo;
 
 import static springfox.documentation.builders.PathSelectors.any;
 
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-import com.example.demo.util.LoggingInterceptor;
+import com.jumbo.util.LoggingInterceptor;
 
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
@@ -18,10 +18,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @EnableSwagger2
 @SpringBootApplication
-public class DemoApplication extends WebMvcConfigurerAdapter {
+public class JumboStoreOperationApplication extends WebMvcConfigurerAdapter {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		SpringApplication.run(JumboStoreOperationApplication.class, args);
 	}
 
 	@Override

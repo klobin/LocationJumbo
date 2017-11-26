@@ -1,9 +1,9 @@
-package com.example.demo.service;
+package com.jumbo.service;
 
 import java.util.List;
 
-import com.example.demo.datatransferobject.StoresDTO;
-import com.example.demo.domainobject.LocationDO;
+import com.jumbo.datatransferobject.StoresDTO;
+import com.jumbo.domainobject.LocationDO;
 
 public interface StoreService {
 

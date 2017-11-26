@@ -1,4 +1,4 @@
-package com.example.demo.datatransferobject;
+package com.jumbo.datatransferobject;
 
 import java.io.Serializable;
 

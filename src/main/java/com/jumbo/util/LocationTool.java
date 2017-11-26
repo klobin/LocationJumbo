@@ -1,4 +1,4 @@
-package com.example.demo.util;
+package com.jumbo.util;
 
 import static com.google.maps.GeocodingApi.geocode;
 

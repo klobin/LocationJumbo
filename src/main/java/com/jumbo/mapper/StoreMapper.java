@@ -1,7 +1,7 @@
-package com.example.demo.mapper;
+package com.jumbo.mapper;
 
-import com.example.demo.datatransferobject.LocationDTO;
-import com.example.demo.domainobject.LocationDO;
+import com.jumbo.datatransferobject.LocationDTO;
+import com.jumbo.domainobject.LocationDO;
 
 public class StoreMapper {
 

@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.jumbo.service;
 
 public class StoreException extends Exception {
 
