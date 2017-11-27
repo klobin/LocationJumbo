@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.jumbo.domainobject.LocationDO;
 
-public interface LocationRepository extends JpaRepository<LocationDO, Long>{
+public interface StoreLocationRepository extends JpaRepository<LocationDO, Long>{
 
 }

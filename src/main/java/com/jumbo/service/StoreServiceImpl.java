@@ -1,6 +1,6 @@
 package com.jumbo.service;
 
-import static com.jumbo.mapper.StoreMapper.mapToLocationDTO;
+import static com.jumbo.mapper.StoreLocationMapper.mapToLocationDTO;
 import static com.jumbo.util.CalculateDistance.distanceTo;
 import static com.jumbo.util.LocationTool.getGeometry;
 import static java.util.Collections.emptyList;
@@ -20,30 +20,32 @@ import org.springframework.stereotype.Service;
 import com.google.maps.model.Geometry;
 import com.jumbo.datatransferobject.StoresDTO;
 import com.jumbo.domainobject.LocationDO;
-import com.jumbo.repository.LocationRepository;
+import com.jumbo.exception.LocationSearchException;
+import com.jumbo.mapper.StoreLocationMapper;
+import com.jumbo.repository.StoreLocationRepository;
 
 @Service
 public class StoreServiceImpl implements StoreService {
 
 	@Autowired
-	private LocationRepository locationRepository;
+	private StoreLocationRepository storeLocationRepository;
 
 	@Override
 	public void addStores(List<LocationDO> storeLocations) {
-		locationRepository.save(storeLocations);
+		storeLocationRepository.save(storeLocations);
 	}
 
 	@Override
-	public StoresDTO findStores(String location) throws StoreException {
+	public StoresDTO findStores(String location, long noOfStores) throws LocationSearchException {
 		Geometry loc;
 
 		try {
 			loc = getGeometry(location);
 		} catch (Exception e) {
-			throw new StoreException(e.getMessage());
+			throw new LocationSearchException(e.getMessage());
 		}
 
-		List<LocationDO> stores = Optional.ofNullable(locationRepository.findAll()).orElse(emptyList());
+		List<LocationDO> stores = Optional.ofNullable(storeLocationRepository.findAll()).orElse(emptyList());
 
 		Map<Double, LocationDO> distanceToStoreMap = new TreeMap<>();
 
@@ -51,10 +53,17 @@ public class StoreServiceImpl implements StoreService {
 
 		List<Map.Entry<Double, LocationDO>> locations = distanceToStoreMap.entrySet().stream()
 				.sorted(comparing(Entry::getKey, reverseOrder()))
-				.limit(5)
+				.limit(noOfStores)
 				.collect(toList());
 
 		return new StoresDTO(locations.stream().map(locationStore -> mapToLocationDTO(locationStore.getValue())).collect(toList()));
+	}
+
+	@Override
+	public StoresDTO getAllStores() {
+		return new StoresDTO(Optional.ofNullable(storeLocationRepository.findAll()).orElse(emptyList()).stream()
+				.map(StoreLocationMapper::mapToLocationDTO)
+				.collect(toList()));
 	}
 
 }

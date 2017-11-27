@@ -17,7 +17,11 @@ public class LocationDTO implements Serializable {
 	private String postalCode;
 
 	private String street;
+	
+	private String street2;
 
+	private String street3;
+	
 	private String addressName;
 
 	private String uuid;
@@ -42,7 +46,7 @@ public class LocationDTO implements Serializable {
 		super();
 	}
 
-	public LocationDTO(Long id, String city, String postalCode, String street, String addressName, String uuid,
+	public LocationDTO(Long id, String city, String postalCode, String street, String street2, String street3, String addressName, String uuid,
 			Double longitude, Double latitude, Long complexNumber, Boolean showWarningMessage, String todayOpen,
 			String todayClose, String locationType, Long sapStoreID) {
 		super();
@@ -50,6 +54,8 @@ public class LocationDTO implements Serializable {
 		this.city = city;
 		this.postalCode = postalCode;
 		this.street = street;
+		this.street2 = street2;
+		this.street3 = street3;
 		this.addressName = addressName;
 		this.uuid = uuid;
 		this.longitude = longitude;
@@ -76,6 +82,14 @@ public class LocationDTO implements Serializable {
 
 	public String getStreet() {
 		return street;
+	}
+
+	public String getStreet2() {
+		return street2;
+	}
+
+	public String getStreet3() {
+		return street3;
 	}
 
 	public String getAddressName() {
@@ -128,6 +142,10 @@ public class LocationDTO implements Serializable {
 
 		private String street;
 
+		private String street2;
+		
+		private String street3;
+		
 		private String addressName;
 
 		private String uuid;
@@ -165,6 +183,17 @@ public class LocationDTO implements Serializable {
 
 		public LocationDTOBuilder setStreet(String street) {
 			this.street = street;
+			return this;
+		}
+		
+
+		public LocationDTOBuilder setStreet2(String street2) {
+			this.street2 = street2;
+			return this;
+		}
+
+		public LocationDTOBuilder setStreet3(String street3) {
+			this.street3 = street3;
 			return this;
 		}
 
@@ -219,7 +248,7 @@ public class LocationDTO implements Serializable {
 		}
 
 		public LocationDTO build() {
-			return new LocationDTO(id, city, postalCode, street, addressName, uuid, longitude, latitude, complexNumber,
+			return new LocationDTO(id, city, postalCode, street, street2, street3, addressName, uuid, longitude, latitude, complexNumber,
 					showWarningMessage, todayOpen, todayClose, locationType, sapStoreID);
 		}
 

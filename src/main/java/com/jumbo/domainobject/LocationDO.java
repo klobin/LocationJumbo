@@ -10,12 +10,16 @@ public class LocationDO {
 	@Id
 	@GeneratedValue
 	private Long id;
-	
+
 	private String city;
 
 	private String postalCode;
 
 	private String street;
+
+	private String street2;
+
+	private String street3;
 
 	private String addressName;
 
@@ -140,4 +144,21 @@ public class LocationDO {
 	public void setSapStoreID(Long sapStoreID) {
 		this.sapStoreID = sapStoreID;
 	}
+
+	public String getStreet2() {
+		return street2;
+	}
+
+	public void setStreet2(String street2) {
+		this.street2 = street2;
+	}
+
+	public String getStreet3() {
+		return street3;
+	}
+
+	public void setStreet3(String street3) {
+		this.street3 = street3;
+	}
+
 }
